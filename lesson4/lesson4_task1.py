@@ -3,3 +3,11 @@
 # В расчете необходимо использовать формулу: (выработка в часах * ставка в час) + премия.
 # Для выполнения расчета для конкретных значений необходимо запускать скрипт с параметрами.
 
+from sys import argv
+
+def salary(hours, rate, bonus):
+    return hours*rate + bonus
+
+script, hours, rate, bonus = argv
+
+print(f"Зарплата сотрудника: {salary(int(hours),int(rate),int(bonus))}")
