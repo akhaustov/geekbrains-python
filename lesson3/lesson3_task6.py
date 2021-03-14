@@ -12,4 +12,6 @@ def f_upper_sym():
             if 97 <= ord(char) <= 122:
                 sym += 1
         print(word.title())
+
+
 f_upper_sym()
