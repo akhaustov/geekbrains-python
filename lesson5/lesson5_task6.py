@@ -11,3 +11,21 @@
 #
 # Пример словаря:
 # {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
+
+result = {}
+with open("task6.txt", encoding="utf-8") as f:
+    for l in f:
+        subj, time = l.split(":")
+        time = time.split()
+        #        print(subj, time)
+        sum_time = 0
+        for t in time:
+            if t == "-":
+                continue
+            t, s = t.split("(")
+            # print(t)
+            # print(s)
+            sum_time += int(t)
+        result[subj] = sum_time
+
+print(result)

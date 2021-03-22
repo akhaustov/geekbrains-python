@@ -12,3 +12,19 @@
 # [{"firm_1": 5000, "firm_2": 3000, "firm_3": 1000}, {"average_profit": 2000}]
 #
 # Подсказка: использовать менеджеры контекста.
+import json
+
+res = {}
+aver_profit = 0
+num = 0
+with open("task7.txt", encoding="utf-8") as f:
+    for l in f:
+        name, type, income, cost = l.split()
+        profit = int(income) - int(cost)
+        if profit >= 0:
+            aver_profit += profit
+            num += 1
+        res[name] = profit
+aver_profit /= num
+with open("task7.json", "w", encoding="utf-8") as f:
+    json.dump([res, {"average_profit": aver_profit}], f, ensure_ascii=False)
