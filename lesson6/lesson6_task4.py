@@ -48,8 +48,10 @@ class WorkCar(Car):
 class SportCar(Car):
     '''Спортивный автомобиль'''
 
+
 class PoliceCar(Car):
     '''Полицейская машина'''
+
 
 town_car = TownCar("BMW", "белый", 70)
 town_car.go()
@@ -73,8 +75,3 @@ sport_car.turn("налево")
 sport_car.turn("направо")
 print(sport_car.show_speed())
 sport_car.stop()
-
-
-
-
-
